@@ -46,10 +46,28 @@ composer run-script --timeout=0 workerman:start
 },
 ```
 
+
 当然也可以直接下面这样启动，效果是一样的，但是 `scripts` 能帮你记录到底有哪些可用的命令，同时在IDE中调试更加方便。
 
 ```
 php bin/swoole.php start
+```
+
+线上部署启动时，修改 `shell/server.sh` 脚本中的绝对路径和参数
+
+```
+php=/usr/local/bin/php
+file=/project/bin/swoole.php
+cmd=start
+numprocs=1
+```
+
+启动管理
+
+```
+sh shell/server.sh start
+sh shell/server.sh stop
+sh shell/server.sh restart
 ```
 
 ## 编写一个 Web 页面
