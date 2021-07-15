@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Router;
+namespace App;
 
 use App\Container\Logger;
 use Mix\Vega\Context;
@@ -42,14 +42,14 @@ class Vega
         }
 
         // 静态文件处理
-        $vega->static('/static', __DIR__ . '/../../public/static');
-        $vega->staticFile('/favicon.ico', __DIR__ . '/../../public/favicon.ico');
+        $vega->static('/static', __DIR__ . '/../public/static');
+        $vega->staticFile('/favicon.ico', __DIR__ . '/../public/favicon.ico');
 
         // 视图
-        $vega->withHTMLRoot(__DIR__ . '/../../views');
+        $vega->withHTMLRoot(__DIR__ . '/../views');
 
         // routes
-        $routes = require __DIR__ . '/../../routes/index.php';
+        $routes = require __DIR__ . '/../routes/index.php';
         $routes($vega);
 
         return $vega;
