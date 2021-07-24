@@ -46,7 +46,6 @@ composer run-script --timeout=0 workerman:start
 },
 ```
 
-
 当然也可以直接下面这样启动，效果是一样的，但是 `scripts` 能帮你记录到底有哪些可用的命令，同时在IDE中调试更加方便。
 
 ```
@@ -69,6 +68,10 @@ sh shell/server.sh start
 sh shell/server.sh stop
 sh shell/server.sh restart
 ```
+
+## PHP-FPM 部署
+
+和 Laravel、ThinkPHP 部署方法完全一致，将 `public/index.php` 在 `nginx` 配置 `rewrite` 重写即可
 
 ## 编写一个 Web 页面
 
