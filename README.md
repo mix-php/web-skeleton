@@ -77,7 +77,7 @@ sh shell/server.sh restart
 然后在 `routes/index.php` 定义一个新的路由
 
 ```php
-$vega->handleCall('/', [new Hello(), 'index'])->methods('GET');
+$vega->handle('/', [new Hello(), 'index'])->methods('GET');
 ```
 
 路由里使用了 `Hello` 控制器，我们需要创建他
